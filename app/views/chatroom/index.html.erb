@@ -7,34 +7,16 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui small feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Elliot Fu</em>: trying to clean this shit up
-              </div>
+          <% @messages.each do |message| %>
+            <div class="event">
+                <div class="content">
+                  <div class="summary">
+                     <em><%= message.user.username %></em>: <%= message.body %>
+                  </div>
+                </div>
             </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Stevie Feliciano</em>: another message from a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Helen Troy</em>: I miss my Caesar
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Christian Rocha</em>: Test Message
-              </div>
-            </div>
-          </div>
+          <% end %>
+
         </div>
       </div>
       <div class="extra content">
